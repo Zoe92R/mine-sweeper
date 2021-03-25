@@ -9,8 +9,15 @@
 <body onload="initGame()">
     <h1>Mine Sweeper</h1>
 
-    <div class= "smileyTime" onclick="reset()"></div>
-
+    <div class="buttons">
+        <button onclick=initGame(0)>Begginer</button>
+            <button onclick=initGame(1)>Medium</button>
+            <button onclick=initGame(2)>Expert</button>
+    </div>
+    <div class="timer">0 SEC</div>
+    <div class="smileyReset" onclick="initGame(0)"></div>
+    <div class="lives">3 LIVES</div>
+    
     <table>
         <tbody class="board center"></tbody>
     </table>
