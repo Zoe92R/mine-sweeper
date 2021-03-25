@@ -1,0 +1,59 @@
+
+.board {
+    margin: 50px;
+    float: right;
+}
+
+.board td {
+    width : 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    /* width : 4em;
+    height: 4em;
+    text-align: center;
+    font-size: 2em; */
+    transition: 0.s;
+    background-color: rgb(248, 224, 215);
+}
+
+/* .board td:hover {
+    font-weight: bold;
+    font-size: x-large;
+} */
+
+.board{
+    background-color: rgb(218, 208, 212);
+}
+
+body{
+    background-color: rgb(253, 241, 235);
+    padding-left: 40%;  /* to change it later to something stable!!!!*/
+}
+
+/* to edd 3d effect for each cell */
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* not working right now */
+/* .shown{
+    background-color: rgb(240, 190, 175);   
+
+} */
+
+.board td:hover {
+    font-weight: bold;
+    font-size: x-large;
+    background-color: rgb(240, 190, 175)
+}
+
+.disabled {
+    background-color: rgb(240, 190, 175);
+    pointer-events: none;
+    opacity: 0.8;
+}
+
