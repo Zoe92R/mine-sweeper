@@ -12,21 +12,6 @@ function createMat(ROWS, COLS) {
     return mat;
 }
 
-function countNegs(mat, pos) {
-    var count = 0;
-    if (mat[pos.i][pos.j].isMine) return -1;
-    for (var i = pos.i - 1; i <= pos.i + 1; i++) {
-        if (i < 0 || i >= mat.length) continue;
-        for (var j = pos.j - 1; j <= pos.j + 1; j++) {
-            if (j < 0 || j >= mat[0].length) continue;
-            if (i === pos.i && j === pos.j) continue;
-            var cell = mat[i][j];
-            if (cell.isMine) count++;
-        }
-    }
-    return count;
-}
-
 //The maximum is inclusive and the minimum is inclusive
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
@@ -38,6 +23,19 @@ function disableCell(elCell) {
     elCell.onclick = '';
     //to remove hober
     elCell.classList.add('disabled');
+}
+
+function getEmptyCells(board, posClick) {
+    var emptyCells = [];
+    for (var i = 0; i < gLevel.SIZE; i++) {
+        for (var j = 0; j < gLevel.SIZE; j++) {
+            var currCell = board[i][j];
+            if (!(currCell.isMine) && !(i === posClick.i && j === posClick.j)) {
+                emptyCells.push({ i, j });
+            }
+        }
+    }
+    return emptyCells;
 }
 
 function checkIfAllShown() {
@@ -52,7 +50,6 @@ function checkIfAllShown() {
     }
     return (NotShown.length === 0);
 }
-
 
 function getSelector(coord) {
     return '#cell-' + coord.i + '-' + coord.j;
